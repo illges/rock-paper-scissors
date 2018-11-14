@@ -1,0 +1,113 @@
+/*Grid*/
+
+.grid {
+  border: 2px blue solid;
+  width: 400px;
+  height: 500px;
+  display: grid;
+
+  /*establishes 3 rows/columns of designated height/width respectively*/
+  grid-template-rows: 40% 50% 50px;
+  grid-template-columns: 100px 50% 200px;
+
+  /*Replaces previous rule in one line*/
+  grid-template: 200px 300px / 20% 10% 70%; /*row / column*/
+  grid-template: 2fr 1fr 1fr / 1fr 3fr 1fr; /*using fractions can help avoid overflow problems*/
+  
+  /*Repeat Function*/
+  grid-template-rows: repeat(3, 100px); /*3 rows, 100px high each*/
+  grid-template-columns: repeat(5, 1fr); /*5 columns, 1/5 of the grid width each*/
+  grid-template-columns: repeat(2, 20px 50px); /*four columns where the first and third columns will be 20 pixels wide and the second and fourth will be 50 pixels wide*/
+  grid-template-columns: 100px minmax(100px, 500px) 100px; /*he second column will always be between 100 and 500 pixels wide.*/
+  
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-gap: 10px 20px; /*row/column*/
+
+}
+
+/*Spanning multiple rows and columns*/
+.item {
+	grid-row-start: 1;
+  	grid-row-end: 3; /*row end is n-1*/
+  	grid-row: 1 / 3;
+
+  	grid-column: 4 / span 2;
+  	grid-column-start: span 2;
+  	grid-column-end: 6;
+
+  	grid-area: 2 / 3 / 4 / span 5;
+  		/* grid-row-start
+		   grid-column-start
+		   grid-row-end
+		   grid-column-end */
+} 
+
+.box {
+  background-color: beige;
+  color: black;
+  border-radius: 5px;
+  border: 2px dodgerblue solid;
+}
+
+/*------------------------------------------------------*/
+/*Example One*/
+
+.container {
+  display: grid;
+  max-width: 900px;
+  position: relative;
+  margin: auto;
+  grid-template-areas: "head head"
+                       "nav nav" 
+                       "info services"
+                       "footer footer";
+  grid-template-rows: 300px 120px 800px 120px;
+  grid-template-columns: 1fr 3fr; 
+}
+
+header {
+  grid-area: head;
+} 
+
+nav {
+  grid-area: nav;
+} 
+
+.info {
+  grid-area: info;
+} 
+
+.services {
+  grid-area: services;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/*-------------------------------------------------------->*/
+/*Example Two*/
+
+.container {
+  display: grid;
+  grid-template: repeat(8, 200px) / repeat(6, 100px);
+}
+
+.info {
+  grid-area: 1 / 1 / 9 / 4;
+}
+
+.services {
+  grid-area: 1 / 4 / 9 / 7;
+}
+
+img {
+  grid-area: 2 / 3 / 5 / 5;
+  z-index: 5;
+}
+
+/*-------------------------------------------------------->*/
+/*Example Three*/
+
+Learn CSS Grid 4/12 advanced

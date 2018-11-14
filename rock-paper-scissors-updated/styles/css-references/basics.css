@@ -1,0 +1,203 @@
+
+/*CSS comment*/
+
+/*Universal Selector*/
+* { 
+  box-sizing: border-box; 
+  /* - keeps all border and padding dimensions inside specified box dimensions
+     - default setting is 'content-box' */
+  
+  margin: 0;
+  padding: 0;
+  /*the above rules reset the browser defaults*/
+}
+
+/*Selectors
+  - HTML element tag name followed by curly brackets
+  - CSS rules are declared inside the brackets
+  - HTML element classes can also be selected in the format .classes
+  - HTML element Id's can also be selected in the format #Id
+  - Selectors can be chained together which increases specificity
+*/
+
+tag {
+	/*
+	- the most basic and least specific CSS selector
+	*/
+}
+
+.class {
+	/*
+	- classes are more specific than tags and will override tag selectors
+	*/
+}
+
+#Id {
+	/*
+	- Id's are the most specific selector and will override class and tag selectors
+	- Should be used sparingly
+	- Id's are meant to be unique attributes in HTML
+	*/
+}
+
+h1.special {
+	/*
+	- Only h1 elements with a class of .special would be selected
+	- p elements with class .special would be excluded
+	*/
+}
+
+div div {
+	/*
+	- nested slectors
+	- only selects divs nested inside divs
+	*/
+}
+
+h1, .class {
+	/*
+	- The comma allows the same rule to be written for multiple selectors at once
+	*/
+}
+
+/* Visual Rules */
+
+p {
+	text-align: right, center, left; /* Aligns text to the element that holds it, or parent element. */
+	color: red;
+	background-color: blue;
+	opacity: 0-1;
+	background-image: url("https");
+	font-family: "Courier New"; 
+	font-size: 18px; 
+	font-weight: normal, bold;
+}
+
+/* 
+	Box-Model 
+	-content : specifies the width and height of the content area
+	-padding :  specifies the amount of space between the content area and the border
+	-border : specifies the thickness and style of the border surrounding the content area and padding
+	-margin : specifies the amount of space between the border and the outside edge of the element
+*/
+
+/*Content*/
+p {
+	height: 80px;
+	width: 240px;
+}
+
+/*Border*/
+p {
+	/*width: thin, medium, thick, 20px;
+	  style: none, dotted solid, etc.;
+	  color: red;*/
+	  border: 3px solid coral; 
+	  border-radius: 5px;
+}
+
+/*Padding*/
+p {
+	padding: 10px;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	
+	padding: 10px 5px 10px 5px; /*top right bottom left*/
+	padding: 10px 5px; /*top and bottom, right and left*/
+}
+
+/*Margins*/
+p {
+	margin: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	
+	margin: 10px 5px 10px 5px; /*top right bottom left*/
+	margin: 10px 5px; /*top and bottom, right and left*/
+	
+	margin: o auto; /*Centers content horizontally*/
+}
+
+p {
+  min-width: 300px;
+  max-width: 600px;
+  
+  min-height: 150px;
+  max-height: 300px;
+}
+
+p {
+	overflow: hidden, scroll, visible (default);
+	
+	visibility: hidden, visible;
+}
+
+/*Display and Positioning
+	- position
+	- display
+	- z-index
+	- float
+	- clear
+*/
+
+/*Position Property*/
+p {
+	position: static; /*default*/
+	position: relative; /*positions element relative to the default*/
+	position: absolute; /*positions element relative to closest positioned parent element. other elements ignore it.*/
+	position: fixed; /*element ignores scrolling staying fixed in view*/
+	
+	/*Offset Properties*/
+	top: 10px; /*pixels, ems or %*/
+	bottom: 10px;
+	right: 10px;
+	left: 10px;
+	
+	z-index: 1-10; /*Moves the element forward or backward depthwise*/
+	
+}
+
+/*Display Properties
+	-inline: Allows element to be displayed in the same line as other inline elements
+	-block: Not displayed on the same line as other elements. Fill the entire width of the page unless specified.
+	-inline-block: elements can appear next to each other and we can specify their dimensions using the width and height properties.*/
+h1 {
+	display: inline; /*Some elements are already inline*/
+	display: block;
+	display: inline-block;
+	
+}
+
+/*Float Property
+	-Moves element left or right as far as possible
+	-Element needs a width setting otherwise it assumes width of page.*/
+p {
+	float: right;
+	float: left;
+	width: 100px;
+}
+
+/*Clear Property
+	-specifies how elements should behave when they bump into each other on the page.
+	-left — the left side of the element will not touch any other element within the same containing element.
+	-right — the right side of the element will not touch any other element within the same containing element.
+	-both — neither side of the element will touch any other element within the same containing element.
+	-none — the element can touch either side.*/
+div {
+	clear: left;
+	clear: right;
+}
+
+
+
+
+
+
+
+
+
+

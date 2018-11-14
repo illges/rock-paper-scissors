@@ -1,0 +1,47 @@
+/*Colors*/
+
+Named colors — English words that describe colors, also called keyword colors.
+			 - 147 Named Colors
+	h1 { Color: red; }
+
+RGB — numeric values that describe a mix of red, green, and blue.
+	h1 { Color: rgb(23, 45, 23); }
+	
+HSL — numeric values that describe a mix of hue, saturation, and lightness.
+	h1 { Color: hsl(120, 60%, 70%); }
+	- Hue : angle on the color wheel
+	- Saturation : intensity and purity of color, 100% is on the edge of color wheel
+	- Lightness : how light or dark the color is.
+	- HSL is also useful for making a set of colors that work well together by selecting various colors that have the same lightness and saturation but different hues.
+
+Alpha/Opacity - The amount of transparency, or the amount of the background to mix with the foreground.
+	- alpha = 0 --> Completely Transparent
+	- alpha = 1 --> Opaque
+	- when alpha is below 1, the color behind the element is blended in.
+	h1 { 
+		color: hsla(34, 100%, 50%, 0.1);
+		color: rgba(234, 45, 98, 0.33);
+		color: transparent;
+	}
+	
+	
+h1 {
+	color: red; /*elements foreground color*/
+	background-color: #9932cc;
+}
+
+Hex Colors: 16 digits, 0-9 and A-F
+	DarkSeaGreen: #8FBC8F
+	Sienna:       #A0522D
+	SaddleBrown:  #8B4513
+	Brown:        #A52A2A
+	Black:        #000000 or #000
+	White:        #FFFFFF or #FFF
+	Aqua:         #00FFFF or #0FF
+
+		- Three Values, One for each color
+		- Each color has 256 values
+		- 256 * 256 * 256 = 16,77,216 colors can be represented
+		
+
+	

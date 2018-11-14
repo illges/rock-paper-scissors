@@ -1,0 +1,46 @@
+/*Typography*/
+	-Good practice to limit number of typefaces to 2 or 3.
+	-Browsers have default fonts if none is specified.
+	-Font must be installed on users computer or linked to.
+
+/*Linking Font-Faces in CSS docs*/
+/* Universal Styles */
+@font-face {
+  font-family: "Glegoo";
+  src: url(fonts/Glegoo-Bold.ttf) format('ttf'),
+    url(../fonts/Glegoo-Regular.ttf) format('truetype');
+}
+
+h1 {
+  font-family: "Courier New", garamond, times; /*fallback fonts*/
+
+  font-weight: normal; /*default*/
+  font-weight: 400; /*default, range 100-900*/
+
+  word-spacing: 0.25em; /*default*/
+  letter-spacing: 0.3em; /*uncommon to change*/
+
+  text-transform: uppercase;
+  text-transform: lowercase;
+
+  text-align: left;
+  text-align: right;
+  text-align: center;
+
+  line-height: 1.2; /*ratio of font size*/
+  line-height: 12px; /*or any other valid CSS unit*/
+}
+
+p {
+  font-family: garamond;
+
+  font-weight: bold;
+  
+  font-style: italic;
+}
+
+
+
+
+
+
