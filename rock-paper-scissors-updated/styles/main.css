@@ -4,9 +4,84 @@
   box-sizing: border-box; /*keeps all border and padding dimensions inside specified box dimensions*/
   /*default setting is 'content-box' */
 }
+
 html {
   font-size: 10px; /* px means 'pixels': the base font size is now 10 pixels high  */
-  font-family: 'Open Sans', sans-serif; /* this should be the rest of the output you got from Google fonts */
-  background-color: #00539F;
+  font-family: sans-serif; /* this should be the rest of the output you got from Google fonts */
+  background-color: #00000;
+  background-image: url("../images/landscape.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  height: 100%;
   }
+
+.buttons {
+  display: flex;
+  flex: 1;
+  min-height: 50vh;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.button {
+  display: block;
+  border: .4rem solid black;
+  border-radius: .5rem;
+  margin: 1rem;
+  font-size: 2rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 20rem;
+  height: 10rem;
+  text-align: center;
+  color: black;
+  text-shadow: 0 0 .5rem black;
+}
+
+#rock {
+	background-color: white;
+	background-image: url("../images/geodude.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#psychic {
+	background-color: white;
+	background-image: url("../images/abra.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#bug {
+	background-color: white;
+	background-image: url("../images/weedle.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.results {
+  display: block;
+  flex: 1;
+  position: absolute;
+  bottom: 0;
+  margin-left:-150px;
+  left:50%;
+  min-height: 40vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
 

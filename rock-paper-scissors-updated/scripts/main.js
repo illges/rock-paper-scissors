@@ -1,64 +1,63 @@
-let options = ['rock', 'paper', 'scissors'];
-//const playerChoice = playerSelection();
-//const computerChoice = computerPlay();
+let options = ['rock', 'psychic', 'bug'];
+let computerSelection;
+let computerScore = 0;
+let playerScore = 0;
+let roundResult;
+
+const button = document.querySelectorAll('.button');
+const resultDiv = document.createElement('div');
+document.body.appendChild(resultDiv);
+const message = document.createElement('p');
 
 function computerPlay() {
-	return options[Math.floor(Math.random()*3)]
-}
-
-function playerSelection() {
-	let choice =  prompt('Enter rock, paper or scissors.').toLowerCase();
-	if (choice === 'rock' ||
-		choice === 'paper' ||
-		choice === 'scissors') {
-		return choice
-	} else {
-		return 'You messed up. Reload page nerd!!!!'
-	}
+	return computerSelection = options[Math.floor(Math.random()*3)]
 }
 
 function playRound(player, computer) {
-	console.log(player);
-	console.log(computer);
+	console.log(`Human : ${player}`);
+	console.log(`Robot : ${computer}`);
 
-	if (player === computer) {
-		return `Tie game! ${player} negates ${computer}.`
-	} else if (player === 'rock') {
-		return (computer === 'paper') ? 1 : 2 // 1 = computer wins, 2= player wins
-	} else if (player === 'paper') {
-		return (computer === 'scissors') ? 1 : 2 // 1 = computer wins, 2= player wins
-	} else if (player === 'scissors') {
-		return (computer === 'rock') ? 1 : 2 // 1 = computer wins, 2= player wins
+	if ((player === 'rock' && computer === 'bug') ||
+		(player === 'psychic' && computer === 'rock') ||
+		(player === 'bug' && computer === 'psychic')) {
+
+		playerScore++;
+		roundResult = 'Humans win!';
+		
+	} else if ( (player === 'rock' && computer === 'psychic') ||
+                (player === 'psychic' && computer === 'bug') ||
+                (player === 'bug' && computer === 'rock')) {
+
+		computerScore++;
+		roundResult = 'Robots win!';
+
 	} else {
-		return 'Something went terribly wrong. Refresh page or fix your code you hack!'
+
+		roundResult = 'Tie game!';
+
 	}
+
+	console.log('----------------------')
 }
 
-function game() {
-	let i, result;
-	let computerScore = 0;
-	let playerScore = 0;
-
-	for (i = 0; i < 5; i++) {
-		result = playRound(playerSelection(), computerPlay());
-		if (result === 1) {
-			console.log(`Robots game #${i+1}!`);
-			console.log('----------------------')
-			computerScore += 1;
-		} else if (result === 2) {
-			console.log(`Humans win game #${i+1}!`);
-			console.log('----------------------')
-			playerScore += 1;
-		} else {
-			console.log(`No winner for game #${i+1}.`);
-		}
-	}
-
-	if (playerScore != computerScore) {
-		return (playerScore > computerScore) ? 'Humans win the Match!' : 'Robots win the Match!'
-	} else {
-		return 'Tie game, pretty boring.'
-	}
+function showResult() {
+	resultDiv.classList.add('results');
+	resultDiv.innerHTML = '<br>Computer chose ' + computerSelection + '<br>' +
+            roundResult + '<br><br>Player score: ' + playerScore + '<br>' +
+            'Computer score: ' + computerScore;
+	
+	if (playerScore === 5 || computerScore === 5) {
+        message.textContent = (playerScore === 5) ? 'You win!' : 'You lose!';
+        message.style.color = (playerScore === 5) ? 'green' : 'red';
+        resultDiv.appendChild(message);
+        playerScore = 0;
+        computerScore = 0;
+    }
 }
 
-console.log(game());
+button.forEach(function(button) {
+	button.addEventListener('click', ()=> computerPlay());
+	button.addEventListener('click', (e)=> playRound(e.target.id, computerSelection));
+	button.addEventListener('click', showResult);
+});
+
