@@ -14,8 +14,8 @@ function computerPlay() {
 }
 
 function playRound(player, computer) {
-	console.log(`Human : ${player}`);
-	console.log(`Robot : ${computer}`);
+	//console.log(`Human : ${player}`);
+	//console.log(`Robot : ${computer}`);
 
 	if ((player === 'rock' && computer === 'bug') ||
 		(player === 'psychic' && computer === 'rock') ||
@@ -37,7 +37,7 @@ function playRound(player, computer) {
 
 	}
 
-	console.log('----------------------')
+	//console.log('----------------------')
 }
 
 function showResult() {
